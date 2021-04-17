@@ -17,7 +17,6 @@ vagrant status
 #    node-2
 vagrant ssh $VMNAME
 
-
 # Destroy VM
 vagrant destroy
 
