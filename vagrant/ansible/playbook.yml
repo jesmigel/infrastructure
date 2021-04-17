@@ -1,0 +1,23 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+    - name: ensure ntp is at the latest version
+      apt: pkg=ntp state=latest
+      notify:
+      - restart ntp
+    - name: ensure docker is at the latest version
+      apt: pkg=docker state=latest
+      notify:
+      - restart docker
+    - name: ensure docker-compose is at the latest version
+      apt: pkg=docker-compose state=latest
+      notify:
+      - version docker-compose
+  handlers:
+    - name: restart docker
+      service: name=docker state=restarted
+    - name: version docker-compose
+      shell: /usr/bin/docker-compose --version
+    - name: restart ntp
+      service: name=ntp state=restarted
