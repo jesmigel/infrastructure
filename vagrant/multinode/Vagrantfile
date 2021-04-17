@@ -1,0 +1,11 @@
+_COUNT=2
+
+Vagrant.configure("2") do |config|
+  
+  (1.._COUNT).each do | i |
+    config.vm.define vm_name = "%s-%01d" % ["node", i] do | node |
+      node.vm.box = "ubuntu/bionic64"
+      node.vm.hostname = vm_name
+    end
+  end
+end
