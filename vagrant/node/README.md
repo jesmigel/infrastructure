@@ -8,6 +8,9 @@ vagrant init ubuntu/bionic64
 # Deploy VM
 vagrant up
 
+# Login to VM
+vagrant ssh
+
 # Destroy VM
 vagrant destroy
 
