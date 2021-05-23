@@ -32,8 +32,12 @@ override.tf.json
 # General
 .vagrant/
 
+# Settings file
+env.yaml
+
 # Log files (if you are creating logs in debug mode, uncomment this)
 *.log
 
 # Virtualenv
 *.venv/
+
