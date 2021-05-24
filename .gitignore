@@ -41,3 +41,6 @@ env.yaml
 # Virtualenv
 *.venv/
 
+# Packer
+output*
+packer_cache*
