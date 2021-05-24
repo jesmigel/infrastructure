@@ -15,14 +15,16 @@ Proof of concept remote rapid prototyping solution
 | | |
 
 ### Makefile Commands
-| Command | Comment |
+| Command | Comments |
 | - | - |
-| up | Starts the VM. Creates if it doesnt exist.|
-| down | Suspends the VM. |
-| clean | Destroys the VM |
+| clean | Destroys virtualmachine. Deletes vagrant cache folder |
+| config | Validates vagrant configuration |
+| down | Suspends the virtualmachine |
+| login | ssh to the virtualmachine |
+| provision | Executes the selected provisioner. For this example, it's ansible |
 | status | Checks the VM state |
-| config | Validates the VM configuration |
-| | |
+| up | Starts the VM. Creates if it doesnt exist. |
+|||
 
 ### USAGE
 ```bash
