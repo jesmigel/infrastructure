@@ -1,4 +1,4 @@
-.PHONY: up down clean status config login
+.PHONY: up down clean status config login provision
 
 _VM=vagrant
 
@@ -13,6 +13,9 @@ down:
 
 login:
 	$(_VM) ssh
+
+provision:
+	$(_VM) provision
 
 status:
 	$(_VM) status
