@@ -1,0 +1,6 @@
+{
+    "esxi_host": "ESXI_HOST",
+    "esxi_datastore": "ESXI_DATASTORE",
+    "esxi_username": "ESXI_USERNAME",
+    "esxi_password": "ESXI_PASSWORD"
+  }
