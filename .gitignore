@@ -1,3 +1,6 @@
+# Generic temporary directory
+.tmp
+
 # Local .terraform directories
 **/.terraform*
 
@@ -44,3 +47,4 @@ env.yaml
 # Packer
 output*
 packer_cache*
+packer/**/variables.json
