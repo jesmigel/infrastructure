@@ -23,8 +23,7 @@ Vagrant.configure('2') do |config|
     #
     #  Provider (esxi) settings
     #
-    config.vm.provider :vmware_esxi do |esxi|
-  
+    config.vm.provider :vmware_esxi do |esxi|  
       #  REQUIRED!  ESXi hostname/IP
       esxi.esxi_hostname = payload['host']
   
