@@ -3,22 +3,34 @@
 _VM=vagrant
 
 clean:
-	$(_VM) destroy
+	$(call venv_exec,.venv,$(_VM) destroy)
 
 config:
-	$(_VM) validate
+	$(call venv_exec,.venv,$(_VM) validate)
 
 down:
-	$(_VM) suspend
+	$(call venv_exec,.venv,$(_VM) suspend)
 
 login:
-	$(_VM) ssh
+	$(call venv_exec,.venv,$(_VM) ssh)
 
 provision:
-	$(_VM) provision
+	$(call venv_exec,.venv,$(_VM) provision)
 
 status:
-	$(_VM) status
+	$(call venv_exec,.venv,$(_VM) status)
 	
 up:
-	$(_VM) up
+	$(call venv_exec,.venv,$(_VM) up)
+
+venv_init:
+	$(call venv_exec,.venv,pip install -r requirements.txt)
+
+# VENV FUNCTIONS
+define venv_exec
+	$(if [ ! -f "$($(1)/bin/activate)" ], python3 -m venv $(1))
+	( \
+    	source $(1)/bin/activate; \
+    	$(2) \
+	)
+endef
