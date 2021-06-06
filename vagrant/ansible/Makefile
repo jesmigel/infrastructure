@@ -15,6 +15,7 @@ login:
 	$(call venv_exec,.venv,$(_VM) ssh)
 
 provision:
+	$(call venv_exec,.venv,pip install -r requirements.txt)
 	$(call venv_exec,.venv,$(_VM) provision)
 
 status:
